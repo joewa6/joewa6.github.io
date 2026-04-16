@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Surfing the Spikes: Signal Processing for Crypto Peaks & Troughs</title>
+
+<!-- Prism.js for syntax highlighting -->
+<link rel="stylesheet" href="https://unpkg.com/prismjs/themes/prism.css" />
+<script defer src="https://unpkg.com/prismjs/components/prism-core.min.js"></script>
+<script defer src="https://unpkg.com/prismjs/components/prism-python.min.js"></script>
+
+<style>
+  body {
+    font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    margin: 0;
+    color: #0f172a;
+    background: #fff;
+  }
+  .top {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    z-index: 10;
+  }
+  a {
+    color: #0ea5e9;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 16px;
+  }
+  .lead {
+    color: #475569;
+  }
+  pre {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fbfbfb;
+    overflow-x: auto;
+    padding: 1rem;
+  }
+  /* Blog post images auto-scale */
+  .blog-post img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+</style>
+</head>
+<body>
+  <header class="top">
+    <div><a href="../projects/p0-time-series-toolkit.html">← Back to Project</a></div>
+    <nav><a href="../index.html#case-studies">Case Studies</a> · <a href="../index.html#cv">CV</a></nav>
+  </header>
+
+  <main class="container">
+    <article class="blog-post">
+      <h1>Surfing the Spikes: Signal Processing for Crypto Peaks & Troughs</h1>
+      <p class="lead">Applying Savitzky–Golay filtering and curvature analysis to detect meaningful turning points in noisy BTC price data.</p>
+
+      <div style="background:#f1f5f9;border-left:4px solid #6366f1;padding:1rem 1.25rem;margin:1.5rem 0;border-radius:8px">
+        <h4 style="margin:0 0 0.5rem;color:#4338ca">What this post is actually about</h4>
+        <p style="margin:0;color:#475569">This analysis is not about markets. It is about what <em>can and cannot be inferred</em> from finite, noisy trajectories in any dynamical system—whether molecular simulations, sensor streams, or price data. The choice of BTC is a sandbox, not the subject.</p>
+      </div>
+
+      <h2>Baseline Discipline</h2>
+      <p>Before applying any sophisticated method, we establish three reference levels:</p>
+      <ul>
+        <li><strong>Naive baseline:</strong> raw signal extrema (no smoothing)</li>
+        <li><strong>Engineered baseline:</strong> fixed Savitzky–Golay window</li>
+        <li><strong>Inferred structure:</strong> scale-robust extrema detection</li>
+      </ul>
+      <p>This hierarchy lets us distinguish true signal from noise artifacts and understand what we're actually improving upon.</p>
+
+      <h3>Raw vs Smoothed</h3>
+      <img src="../assets/img/blog/series-1-peaks/p1_raw_vs_smoothed.png" alt="Raw vs Smoothed" loading="lazy">
+
+      <h3>Slope</h3>
+      <img src="../assets/img/blog/series-1-peaks/p1_slope.png" alt="Slope">
+
+      <h3>Curvature</h3>
+      <img src="../assets/img/blog/series-1-peaks/p1_curvature.png" alt="Curvature">
+
+      <h3>Detected Peaks & Troughs</h3>
+      <img src="../assets/img/blog/series-1-peaks/p1_peaks_troughs.png" alt="Peaks & Troughs">
+
+      <div style="background:#fef3c7;border-left:4px solid #f59e0b;padding:1rem 1.25rem;margin:1.5rem 0;border-radius:8px">
+        <h4 style="margin:0 0 0.5rem;color:#92400e">Decision Quantity</h4>
+        <p style="margin:0 0 0.75rem;color:#78350f"><strong>Given a finite trajectory, how stable is the timing and ordering of detected transitions under perturbations of the smoothing scale?</strong></p>
+        <p style="margin:0;color:#78350f;font-size:0.95rem">Failure mode: False peaks appear/disappear with small window changes (non-robust). Robustness region: Peaks persist across a window range (scale-invariant extrema). For sufficiently short trajectories, peak detection becomes non-identifiable regardless of smoothing; this is a data limit, not a modelling failure.</p>
+      </div>
+
+      <p>Notebook & code: 
+        <a href="https://github.com/joewa6/joewa6.github.io/blob/main/notebooks/time_series_toolkit.py" target="_blank">GitHub</a>
+      </p>
+    </article>
+  </main>
+</body>
+</html>

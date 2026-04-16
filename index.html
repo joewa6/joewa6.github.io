@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Joe Wallace - Computational Chemist for Ligand Screening</title>
+  <meta name="description" content="Computational chemistry portfolio focused on reproducible ligand-screening workflows, docking, rescoring, benchmarking, and drug discovery hit triage." />
+
+  <style>
+    :root{
+      --bg:#fbfbf8;
+      --surface:#ffffff;
+      --text:#111827;
+      --muted:#4b5563;
+      --quiet:#6b7280;
+      --rule:#d8dee5;
+      --rule-soft:#edf0f2;
+      --accent:#334155;
+      --accent-dark:#1f2937;
+      --maxw:960px;
+      --topbar-h:64px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline;text-underline-offset:3px}
+    h1,h2,h3{margin:0;color:var(--text);font-weight:650;letter-spacing:0;line-height:1.18}
+    h1{font-size:clamp(2.35rem,5vw,4.55rem);font-weight:680;max-width:900px}
+    h2{font-size:clamp(1.35rem,2.5vw,1.85rem)}
+    h3{font-size:1.03rem}
+    p{margin:0}
+    section{padding:46px 0;border-top:1px solid var(--rule);scroll-margin-top:calc(var(--topbar-h) + 24px)}
+    footer{padding:28px 0 18px;border-top:1px solid var(--rule);color:var(--quiet)}
+    .page{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+    .lead{color:var(--muted);max-width:720px;font-size:1.02rem}
+    .quiet{color:var(--quiet)}
+    .eyebrow{color:var(--quiet);font-size:.78rem;font-weight:650;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:.68rem 1rem;border-radius:4px;border:1px solid var(--accent);background:var(--accent);color:#fff;font-weight:620}
+    .btn:hover{background:var(--accent-dark);border-color:var(--accent-dark);text-decoration:none}
+    .btn.secondary{background:transparent;color:var(--text);border-color:var(--rule)}
+    .btn.secondary:hover{background:#f3f4f6;border-color:#c9d0d6;text-decoration:none}
+    .actions,.footer-links{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+    .topbar{position:sticky;top:0;z-index:10;background:rgba(251,251,248,.94);backdrop-filter:saturate(1.05) blur(8px);border-bottom:1px solid var(--rule);min-height:var(--topbar-h)}
+    .topbar .inner{min-height:var(--topbar-h);max-width:var(--maxw);margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:700;color:var(--text)}
+    .brand span{display:block;color:var(--quiet);font-size:.86rem;font-weight:500;margin-top:2px}
+    .topnav{display:flex;gap:18px;align-items:center;flex-wrap:wrap;font-size:.94rem}
+    .topnav a{color:#374151}
+    .topnav a.primary-link{color:var(--accent);font-weight:650}
+
+    .hero{padding:86px 0 58px}
+    .identity-line{color:var(--quiet);font-size:.95rem;margin-bottom:22px}
+    .hero-tagline{font-size:clamp(1.12rem,2.1vw,1.38rem);color:#374151;max-width:760px;margin:22px 0 26px}
+
+    .section-head{display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:start}
+    .section-body{min-width:0}
+    .selected-project{padding-bottom:4px}
+    .project-summary{border-left:3px solid var(--accent);padding-left:22px}
+    .project-summary h2{margin-bottom:14px}
+    .project-summary p + p{margin-top:10px}
+    .scope-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 22px;margin:22px 0 0;padding:18px 0 0;border-top:1px solid var(--rule-soft);list-style:none;color:var(--muted)}
+    .scope-list li{position:relative;padding-left:14px}
+    .scope-list li:before{content:"";position:absolute;left:0;top:.78em;width:4px;height:4px;background:var(--accent)}
+
+    .lane-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+    .lane{border-top:2px solid var(--rule);padding-top:16px}
+    .lane p{color:var(--muted);margin-top:8px}
+    .meta{color:var(--quiet);font-size:.88rem;margin-top:12px}
+
+    .study-list{border-top:1px solid var(--rule)}
+    .study{display:grid;grid-template-columns:minmax(190px,.85fr) 1.6fr auto;gap:24px;align-items:start;padding:24px 0;border-bottom:1px solid var(--rule)}
+    .study h3{font-size:1.08rem}
+    .study p{color:var(--muted)}
+    .study p + p{margin-top:8px}
+    .study-link{font-size:.94rem;font-weight:620;white-space:nowrap}
+
+    .text-block{max-width:760px}
+    .text-block p + p{margin-top:12px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+    .plain-list{margin:0;padding:0;list-style:none;color:var(--muted)}
+    .plain-list li + li{margin-top:8px}
+    .placeholder{color:var(--quiet)}
+    .anchor-alias{display:block;position:relative;top:calc(-1 * (var(--topbar-h) + 24px));visibility:hidden}
+
+    @media (max-width:820px){
+      .topbar .inner{align-items:flex-start;flex-direction:column;padding:14px 22px}
+      .topnav{gap:12px}
+      .hero{padding:62px 0 42px}
+      .section-head{grid-template-columns:1fr;gap:18px}
+      .lane-grid,.scope-list,.contact-grid{grid-template-columns:1fr}
+      .study{grid-template-columns:1fr;gap:10px}
+      .study-link{white-space:normal}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <div class="brand">Joe Wallace<span>Computational chemistry and ligand screening</span></div>
+      <nav class="topnav" aria-label="Primary">
+        <a href="#selected-project">Selected project</a>
+        <a href="#case-studies">Case studies</a>
+        <a href="#cv">CV</a>
+        <a href="#contact" class="primary-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="page">
+    <section class="hero" aria-label="Introduction">
+      <p class="identity-line">Computational chemist. Reproducible workflows for ligand prioritisation.</p>
+      <h1>Computational chemist building reproducible ligand-screening workflows for drug discovery.</h1>
+      <p class="hero-tagline">Docking, rescoring, benchmarking, and physically grounded analysis for hit triage.</p>
+      <div class="actions">
+        <a class="btn" href="#case-studies">View Projects</a>
+        <a class="btn secondary" href="#cv">Download CV</a>
+      </div>
+    </section>
+
+    <section id="selected-project" class="selected-project">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Selected project</p>
+        </div>
+        <div class="section-body project-summary">
+          <h2>Docking + rescoring benchmark for ligand ranking</h2>
+          <p class="lead">Built a reproducible workflow to test whether rescoring improves prioritisation over baseline docking on a curated protein-ligand benchmark.</p>
+          <p class="quiet">Current case study focuses on ranking analysis, benchmark design, and explicit failure-mode analysis rather than inflated claims.</p>
+          <ul class="scope-list" aria-label="Workflow scope">
+            <li>Structure preparation and docking setup</li>
+            <li>Ligand descriptors and interaction features</li>
+            <li>Ranking, enrichment, and baseline comparison</li>
+            <li>Transparent limitations and reproducible setup</li>
+          </ul>
+          <div class="actions" style="margin-top:22px">
+            <a class="btn secondary" href="projects/p1-binding-pipeline.html">Case Study</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="what-i-do">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Capabilities</p>
+          <h2>What I Do</h2>
+        </div>
+        <div class="section-body">
+          <p class="lead">Computational workflows for ligand prioritisation, built to be inspected, rerun, and challenged.</p>
+          <div class="lane-grid" style="margin-top:26px">
+            <article class="lane">
+              <h3>Virtual screening workflows</h3>
+              <p>Docking, rescoring, enrichment analysis, and benchmark design for ligand ranking.</p>
+              <p class="meta">Docking / rescoring / enrichment</p>
+            </article>
+            <article class="lane">
+              <h3>Molecular modelling</h3>
+              <p>Structure-based analysis, ligand-target interactions, and reproducible model assumptions.</p>
+              <p class="meta">CADD / interactions / RDKit</p>
+            </article>
+            <article class="lane">
+              <h3>Scientific computing</h3>
+              <p>Python automation, analysis notebooks, GitHub-first workflows, and decision-oriented tooling.</p>
+              <p class="meta">Python / analysis / reproducibility</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <span id="projects" class="anchor-alias" aria-hidden="true"></span>
+    <section id="case-studies">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Project records</p>
+          <h2>Case Studies</h2>
+        </div>
+        <div class="section-body">
+          <p class="lead">Technical records of workflows, assumptions, evaluation logic, and current limitations.</p>
+          <div class="study-list" style="margin-top:24px">
+            <article class="study">
+              <h3>Ligand ranking benchmark pipeline</h3>
+              <div>
+                <p>Question: can rescoring and molecular features improve prioritisation beyond a docking-only baseline?</p>
+                <p>Status: reproducible benchmark workflow in progress, with emphasis on ranking analysis and failure modes.</p>
+                <p class="meta">Docking / rescoring / benchmarking / reproducibility</p>
+              </div>
+              <a class="study-link" href="projects/p1-binding-pipeline.html">Open case study</a>
+            </article>
+
+            <article class="study">
+              <h3>Screening analysis dashboard</h3>
+              <div>
+                <p>Question: how should screening results be filtered, ranked, inspected, and exported for practical hit triage?</p>
+                <p>Status: dashboard workflow prototype for cheminformatics review and reproducible analysis.</p>
+                <p class="meta">Cheminformatics / dashboard / ranking / analysis</p>
+              </div>
+              <a class="study-link" href="projects/p2-screening-dashboard.html">Open case study</a>
+            </article>
+
+            <article class="study">
+              <h3>Low-data molecular property modelling</h3>
+              <div>
+                <p>Question: when data are limited, which learned molecular representations remain useful enough to justify their complexity?</p>
+                <p>Status: analysis prototype comparing baseline discipline, transfer learning ideas, and latent diagnostics.</p>
+                <p class="meta">Molecular ML / few-shot / diagnostics / baselines</p>
+              </div>
+              <a class="study-link" href="projects/p3-few-shot.html">Open case study</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <span id="hiring-managers" class="anchor-alias" aria-hidden="true"></span>
+    <span id="blog" class="anchor-alias" aria-hidden="true"></span>
+    <section id="documentation">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Method record</p>
+          <h2>What this site documents</h2>
+        </div>
+        <div class="section-body text-block">
+          <p>Reproducible computational workflows for ligand prioritisation and molecular analysis.</p>
+          <p class="quiet">Case studies include code structure, evaluation logic, limitations, and implementation notes. The emphasis is realistic benchmarking, interpretable results, and practical scientific value.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Documents</p>
+          <h2>CV</h2>
+        </div>
+        <div class="section-body">
+          <p class="lead">CV available on request. The previous PDF path is not linked because no CV file is currently present in the repository.</p>
+          <div class="actions" style="margin-top:18px">
+            <span class="btn secondary placeholder">CV PDF pending</span>
+            <a class="btn secondary" href="https://github.com/joewa6" target="_blank" rel="noreferrer">GitHub</a>
+            <span class="btn secondary placeholder">LinkedIn URL pending</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Contact</h2>
+        </div>
+        <div class="section-body contact-grid">
+          <div>
+            <h3>Recruiting and collaboration</h3>
+            <p class="quiet" style="margin-top:8px">Open to computational chemistry and drug discovery roles involving ligand screening, molecular modelling, benchmarking, and scientific software.</p>
+          </div>
+          <div>
+            <h3>Direct links</h3>
+            <ul class="plain-list" style="margin-top:8px">
+              <li><a href="https://github.com/joewa6" target="_blank" rel="noreferrer">GitHub</a></li>
+              <li><span class="placeholder">LinkedIn URL pending</span></li>
+              <li><span class="placeholder">Email address pending</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer-links">
+          <a href="#cv">CV</a>
+          <a href="https://github.com/joewa6" target="_blank" rel="noreferrer">GitHub</a>
+          <span>LinkedIn pending</span>
+          <span>Email pending</span>
+        </div>
+        <p class="quiet" style="margin-top:12px">
+          Supporting technical notes: <a href="blog/dynamics-10/day00-scope-and-intent.html">DYNAMICS-10</a>
+        </p>
+        <div class="quiet" style="margin-top:12px">&copy; <span id="y"></span> Joe Wallace</div>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
