@@ -21,15 +21,15 @@
       --topbar-h:64px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:15.2px/1.58 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline;text-underline-offset:3px}
-    h1,h2,h3{margin:0;color:var(--text);font-weight:650;letter-spacing:0;line-height:1.18}
-    h1{font-size:clamp(2.35rem,5vw,4.55rem);font-weight:680;max-width:900px}
-    h2{font-size:clamp(1.35rem,2.5vw,1.85rem)}
-    h3{font-size:1.03rem}
+    h1,h2,h3{margin:0;color:var(--text);font-weight:650;letter-spacing:0;line-height:1.08}
+    h1{font-size:clamp(1.65rem,3.5vw,2.65rem);font-weight:670;max-width:900px;line-height:1.08;}
+    h2{font-size:clamp(1.08rem,2vw,1.32rem);font-weight:640;line-height:1.13;}
+    h3{font-size:1.00rem;font-weight:600;line-height:1.13;}
     p{margin:0}
-    section{padding:46px 0;border-top:1px solid var(--rule);scroll-margin-top:calc(var(--topbar-h) + 24px)}
+    section{padding:32px 0 28px 0;border-top:1px solid var(--rule);scroll-margin-top:calc(var(--topbar-h) + 18px)}
     footer{padding:28px 0 18px;border-top:1px solid var(--rule);color:var(--quiet)}
     .page{max-width:var(--maxw);margin:0 auto;padding:0 22px}
     .lead{color:var(--muted);max-width:720px;font-size:1.02rem}
@@ -49,35 +49,35 @@
     .topnav a{color:#374151}
     .topnav a.primary-link{color:var(--accent);font-weight:650}
 
-    .hero{padding:86px 0 58px}
-    .identity-line{color:var(--quiet);font-size:.95rem;margin-bottom:22px}
-    .hero-tagline{font-size:clamp(1.12rem,2.1vw,1.38rem);color:#374151;max-width:760px;margin:22px 0 26px}
+    .hero{padding:54px 0 32px}
+    .identity-line{color:var(--quiet);font-size:.91rem;margin-bottom:14px}
+    .hero-tagline{font-size:clamp(1.01rem,1.7vw,1.13rem);color:#374151;max-width:720px;margin:14px 0 18px}
 
-    .section-head{display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:start}
+    .section-head{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:start}
     .section-body{min-width:0}
     .selected-project{padding-bottom:4px}
-    .project-summary{border-left:3px solid var(--accent);padding-left:22px}
+    .project-summary{border-left:3px solid var(--accent);padding-left:16px}
     .project-summary h2{margin-bottom:14px}
     .project-summary p + p{margin-top:10px}
-    .scope-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 22px;margin:22px 0 0;padding:18px 0 0;border-top:1px solid var(--rule-soft);list-style:none;color:var(--muted)}
+    .scope-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px;margin:14px 0 0;padding:10px 0 0;border-top:1px solid var(--rule-soft);list-style:none;color:var(--muted)}
     .scope-list li{position:relative;padding-left:14px}
     .scope-list li:before{content:"";position:absolute;left:0;top:.78em;width:4px;height:4px;background:var(--accent)}
 
-    .lane-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
-    .lane{border-top:2px solid var(--rule);padding-top:16px}
+    .lane-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .lane{border-top:2px solid var(--rule);padding-top:10px}
     .lane p{color:var(--muted);margin-top:8px}
     .meta{color:var(--quiet);font-size:.88rem;margin-top:12px}
 
     .study-list{border-top:1px solid var(--rule)}
-    .study{display:grid;grid-template-columns:minmax(190px,.85fr) 1.6fr auto;gap:24px;align-items:start;padding:24px 0;border-bottom:1px solid var(--rule)}
-    .study h3{font-size:1.08rem}
+    .study{display:grid;grid-template-columns:minmax(160px,.85fr) 1.6fr auto;gap:16px;align-items:start;padding:16px 0;border-bottom:1px solid var(--rule)}
+    .study h3{font-size:.98rem;font-weight:600;line-height:1.13;}
     .study p{color:var(--muted)}
-    .study p + p{margin-top:8px}
-    .study-link{font-size:.94rem;font-weight:620;white-space:nowrap}
+    .study p + p{margin-top:6px}
+    .study-link{font-size:.91rem;font-weight:600;white-space:nowrap}
 
-    .text-block{max-width:760px}
-    .text-block p + p{margin-top:12px}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+    .text-block{max-width:720px}
+    .text-block p + p{margin-top:10px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
     .plain-list{margin:0;padding:0;list-style:none;color:var(--muted)}
     .plain-list li + li{margin-top:8px}
     .placeholder{color:var(--quiet)}
@@ -85,11 +85,11 @@
 
     @media (max-width:820px){
       .topbar .inner{align-items:flex-start;flex-direction:column;padding:14px 22px}
-      .topnav{gap:12px}
-      .hero{padding:62px 0 42px}
-      .section-head{grid-template-columns:1fr;gap:18px}
+      .topnav{gap:10px}
+      .hero{padding:38px 0 24px}
+      .section-head{grid-template-columns:1fr;gap:12px}
       .lane-grid,.scope-list,.contact-grid{grid-template-columns:1fr}
-      .study{grid-template-columns:1fr;gap:10px}
+      .study{grid-template-columns:1fr;gap:8px}
       .study-link{white-space:normal}
     }
   </style>
@@ -109,7 +109,7 @@
 
   <main id="home" class="page">
     <section class="hero" aria-label="Introduction">
-      <p class="identity-line">Computational chemist. Reproducible workflows for ligand prioritisation.</p>
+      <p class="identity-line">Computational chemist. Reproducible ligand-screening workflows.</p>
       <h1>Computational chemist building reproducible ligand-screening workflows for drug discovery.</h1>
       <p class="hero-tagline">Docking, rescoring, benchmarking, and physically grounded analysis for hit triage.</p>
       <div class="actions">
