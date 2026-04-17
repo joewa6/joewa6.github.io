@@ -1,24 +1,21 @@
 % =============================================================
-%  cv_joseph_wallace.tex  —  v2
-%  Font:    TeX Gyre Heros (Helvetica clone, full pdfLaTeX support)
-%  Build:   latexmk -pdf cv_joseph_wallace.tex
-%           or: ./build_cv.sh
+%  cv_joseph_wallace.tex  —  v3
+%  Font:  newtxtext (Times-based serif, clean academic look)
+%  Build: latexmk -pdf cv_joseph_wallace.tex
 % =============================================================
 
-\documentclass[10pt, a4paper]{article}
+\documentclass[9pt, a4paper]{extarticle}
 
 % ---- Encoding & font ----------------------------------------
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{tgheros}
-\renewcommand{\familydefault}{\sfdefault}
-\usepackage[tracking=true, kerning=true]{microtype}
+\usepackage{newtxtext}
+\usepackage{microtype}
 
 % ---- Layout -------------------------------------------------
-\usepackage[top=1.9cm, bottom=1.9cm, left=2.2cm, right=2.2cm]{geometry}
+\usepackage[top=0.9cm, bottom=0.9cm, left=1.8cm, right=1.8cm]{geometry}
 \usepackage{enumitem}
 \usepackage{tabularx}
-\usepackage{array}
 \usepackage{hyperref}
 
 \hypersetup{
@@ -34,111 +31,94 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 
-% =============================================================
-%  MACROS
-% =============================================================
-
-% Section heading: tracked small-caps uppercase + thin rule
+% ---- Section heading: bold label + thin rule below ----------
 \newcommand{\cvsection}[1]{%
-  \par\vspace{13pt}%
-  \noindent{\small\bfseries\textls[110]{\MakeUppercase{#1}}}%
+  \par\vspace{6pt}%
+  \noindent{\normalsize\bfseries #1}%
+  \par\vspace{1pt}%
+  \noindent\rule{\linewidth}{0.4pt}%
   \par\vspace{2pt}%
-  \noindent\rule{\linewidth}{0.45pt}%
-  \par\vspace{5pt}%
 }
 
-% Entry header: bold role left, italic date right, italic org below
+% ---- Entry: bold role + plain date right, plain org below ---
 \newcommand{\cventry}[3]{%
-  \par\vspace{3pt}%
-  \begin{tabularx}{\linewidth}{@{}X r@{}}
-    \textbf{#1} & {\small\itshape #3} \\[-2pt]
-    {\small\itshape #2} & \\
+  \par\vspace{2pt}%
+  \noindent\begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} & #3 \\[-2pt]
+    #2 & \\
   \end{tabularx}%
-  \vspace{0pt}%
+  \vspace{-3pt}%
 }
 
-% Compact en-dash bullet list at \small
+% ---- Compact bullets ----------------------------------------
 \newenvironment{cvbullets}{%
   \begin{itemize}[
-    leftmargin = 1.2em,
-    label      = \textendash,
-    topsep     = 2pt,
-    itemsep    = 1pt,
+    leftmargin = 1.4em,
+    label      = \textbullet,
+    topsep     = 1pt,
+    itemsep    = 0pt,
     parsep     = 0pt
-  ]\small
+  ]%
 }{%
-  \end{itemize}\vspace{1pt}%
+  \end{itemize}\vspace{0pt}%
 }
 
 % =============================================================
 \begin{document}
-
 % =============================================================
-%  HEADER
+%  HEADER  (left-aligned)
 % =============================================================
-\begin{center}
-  {\fontsize{21}{25}\selectfont\bfseries Joseph Wallace}\\[5pt]
-  {\small\itshape
-    Computational Chemist\enspace\textbar\enspace
-    Molecular Modelling\enspace\textbar\enspace
-    Ligand Screening Workflows}\\[7pt]
-  {\small
-    \href{mailto:joseph.wallace@iit.it}{joseph.wallace@iit.it}%
-    \enspace\textbar\enspace
-    \href{https://www.linkedin.com/in/joseph--wallace/}{LinkedIn}%
-    \enspace\textbar\enspace
-    \href{https://github.com/joewa6}{GitHub}%
-    \enspace\textbar\enspace
-    \href{https://joewa6.github.io/}{joewa6.github.io}%
-    \enspace\textbar\enspace
-    Genoa, Italy%
-  }
-\end{center}
+\noindent{\fontsize{17}{21}\selectfont\bfseries Joseph Wallace}\\[2pt]
+\noindent Computational Chemist\enspace|\enspace
+           Molecular Modelling\enspace|\enspace
+           Ligand Screening Workflows\\[3pt]
+\noindent{\small
+  \href{mailto:joseph.wallace@iit.it}{joseph.wallace@iit.it}%
+  \enspace|\enspace
+  \href{https://www.linkedin.com/in/joseph--wallace/}{LinkedIn}%
+  \enspace|\enspace
+  \href{https://github.com/joewa6}{GitHub}%
+  \enspace|\enspace
+  \href{https://joewa6.github.io/}{Web}%
+  \enspace|\enspace
+  Genoa, Italy%
+}
 
-\vspace{5pt}
-\noindent\rule{\linewidth}{0.8pt}
+\vspace{3pt}
+\noindent\rule{\linewidth}{0.6pt}
 
 % =============================================================
 %  PROFESSIONAL SUMMARY
 % =============================================================
 \cvsection{Professional Summary}
 
-{\small Computational chemist with a background in molecular modelling,
-simulation, and structure-focused analysis across biomolecular and nanoscale
-systems. Currently building reproducible ligand-screening, docking, rescoring,
-and scientific Python workflows for drug-discovery-style prioritisation.
-Strong focus on physically grounded modelling, benchmark-aware evaluation,
-and clear computational decision pipelines.}
+Computational chemist with a background in molecular modelling, simulation,
+and structure-focused analysis across biomolecular and nanoscale systems.
+Currently building reproducible ligand-screening, docking, and rescoring
+workflows for drug-discovery-style prioritisation, with a strong focus on
+physically grounded modelling and benchmark-aware evaluation.
 
 % =============================================================
 %  CORE SKILLS
 % =============================================================
 \cvsection{Core Skills}
 
-\begin{tabularx}{\linewidth}{%
-    @{}
-    >{\bfseries\small\raggedright\arraybackslash}p{4.7cm}%
-    >{\small\raggedright\arraybackslash}X
-    @{}}
-  Molecular Modelling \& Screening &
-    Docking workflows, rescoring strategy, molecular interaction analysis,
-    structure-based modelling, comparative ranking and benchmark evaluation \\[3pt]
-  Scientific Computing \& Analysis &
-    Python, NumPy, pandas, SciPy, matplotlib; reproducible analysis pipelines,
-    workflow automation, data visualisation \\[3pt]
-  Simulation Methods &
-    Molecular dynamics, enhanced sampling, umbrella sampling, metadynamics,
-    Hamiltonian replica exchange, free-energy-oriented analysis \\[3pt]
-  Cheminformatics \& Tools &
-    RDKit, PyMOL, VMD, xTB \\[3pt]
-  HPC \& Research Computing &
-    Linux environments, HPC workflows, job submission, simulation pipeline
-    management \\
-\end{tabularx}
+\noindent\textbf{Molecular Modelling \& Screening:} Docking workflows,
+rescoring strategy, molecular interaction analysis, structure-based modelling,
+comparative ranking and benchmark evaluation.
 
-\vspace{5pt}
-\noindent{\small\textbf{Tools:}\enspace
-Python\,\textbullet\,RDKit\,\textbullet\,GROMACS\,\textbullet\,PLUMED\,\textbullet\,PyMOL\,\textbullet\,VMD\,\textbullet\,xTB\,\textbullet\,Linux/HPC}
+\noindent\textbf{Scientific Computing \& Data Analysis:} Python, NumPy,
+pandas, SciPy, matplotlib, reproducible analysis pipelines, workflow
+automation, data visualisation.
+
+\noindent\textbf{Simulation Methods:} Molecular dynamics, enhanced sampling,
+umbrella sampling, metadynamics, Hamiltonian replica exchange,
+free-energy-oriented analysis.
+
+\noindent\textbf{Cheminformatics \& Molecular Tools:} RDKit, PyMOL, VMD, xTB.
+
+\noindent\textbf{HPC \& Research Computing:} Linux environments, HPC workflows,
+job submission, simulation pipeline management. Software: GROMACS, PLUMED.
 
 % =============================================================
 %  PROFESSIONAL EXPERIENCE
@@ -146,41 +126,32 @@ Python\,\textbullet\,RDKit\,\textbullet\,GROMACS\,\textbullet\,PLUMED\,\textbull
 \cvsection{Professional Experience}
 
 \cventry{Postdoctoral Researcher}%
-        {University of Padova / Italian Institute of Technology --- Italy}%
+        {University of Padova / Italian Institute of Technology, Italy}%
         {2022--Present}
 \begin{cvbullets}
   \item Lead computational modelling and analysis on nanoparticle--molecule
-        systems, with emphasis on physically grounded simulation, molecular
-        interaction analysis, and reproducible scientific workflows.
-  \item Designed and maintained Python-based analysis pipelines for simulation
-        data, including automated processing, visualisation, and benchmark-style
-        comparison across systems.
+        systems; designed Python-based pipelines for automated processing,
+        visualisation, and benchmark-style comparison across systems.
   \item Applied molecular simulation and enhanced-sampling methods to study
         structure, dynamics, and interaction behaviour in complex molecular
-        systems.
-  \item Worked across interdisciplinary settings, translating molecular-scale
-        results into interpretable hypotheses and decision-ready outputs.
+        systems, translating results into interpretable and decision-ready
+        outputs.
 \end{cvbullets}
 
 \cventry{PhD Research Attachment}%
-        {Universit\'{e} Sorbonne Paris Nord --- France}%
+        {Universit\'{e} Sorbonne Paris Nord, France}%
         {2021--2022}
 \begin{cvbullets}
-  \item Supported research continuity during laboratory relocation, including
-        onboarding, coordination, and integration into collaborative structures.
-  \item Contributed to computational and organisational research activity within
-        an international academic environment.
+  \item Supported research continuity during laboratory relocation; contributed
+        to computational research within an international academic environment.
 \end{cvbullets}
 
 \cventry{PhD Research Attachment}%
-        {A*STAR Institute of High Performance Computing --- Singapore}%
+        {A*STAR Institute of High Performance Computing, Singapore}%
         {2019--2021}
 \begin{cvbullets}
-  \item Conducted computational biochemistry research in an HPC environment,
-        focusing on molecular simulation, structural analysis, and data-intensive
-        modelling workflows.
-  \item Worked in an international setting with strong emphasis on scalable
-        computation and reproducible analysis.
+  \item Conducted molecular simulation and structural analysis research in an
+        HPC environment, with emphasis on scalable and reproducible workflows.
 \end{cvbullets}
 
 % =============================================================
@@ -189,33 +160,18 @@ Python\,\textbullet\,RDKit\,\textbullet\,GROMACS\,\textbullet\,PLUMED\,\textbull
 \cvsection{Education}
 
 \cventry{PhD, Computational Biochemistry}%
-        {University of Liverpool --- UK}%
+        {University of Liverpool, UK}%
         {2017--2022}
-\par\vspace{3pt}
-\noindent{\small\textit{Thesis:} How does constraining folded peptides within
-dense self-assembled monolayers on gold nanoparticles affect their structure?}
-\begin{cvbullets}
-  \item Combined molecular simulation and experimental data to study structure,
-        dynamics, and interactions in peptide--nanoparticle systems.
-  \item Built a strong foundation in molecular modelling, structural
-        interpretation, and computational analysis.
-\end{cvbullets}
+\noindent\textit{Thesis:} How does constraining folded peptides within dense
+self-assembled monolayers on gold nanoparticles affect their structure?
+Combined molecular simulation and experimental data to study structure,
+dynamics, and interactions in peptide--nanoparticle systems.
 
 \cventry{BSc Biochemistry, First Class Honours}%
-        {University of Liverpool --- UK}%
+        {University of Liverpool, UK}%
         {2014--2017}
-\par\vspace{3pt}
-\noindent{\small\textit{Project:} Solving the crystal structure of
-Cytochrome bc\textsubscript{1} for the development of antimalarials.}
-
-\vspace{6pt}
-
-\cventry{Summer Studentship (Wellcome Trust Funded)}%
-        {University of Liverpool --- UK}%
-        {Summer 2016}
-\par\vspace{3pt}
-\noindent{\small\textit{Project:} Investigating the potential of non-heparin
-anticoagulants with antithrombin.}
+\noindent\textit{Project:} Solving the crystal structure of Cytochrome
+bc\textsubscript{1} for the development of antimalarials.
 
 % =============================================================
 %  SELECTED PROJECTS
@@ -231,7 +187,7 @@ anticoagulants with antithrombin.}
         evaluation rather than inflated performance claims.
   \item \textit{Links:}
         \href{[PROJECT_LINK_PLACEHOLDER]}{Project page}%
-        \enspace\textbar\enspace
+        \enspace|\enspace
         \href{[REPO_LINK_PLACEHOLDER]}{Repository}
 \end{cvbullets}
 
@@ -242,22 +198,13 @@ anticoagulants with antithrombin.}
   \item Emphasis on reproducibility, interpretable analysis, and workflow reuse.
 \end{cvbullets}
 
-\noindent\textbf{Low-Data Molecular Modelling Study}
-\begin{cvbullets}
-  \item Exploratory case study comparing baseline molecular representations,
-        transfer-learning ideas, and latent diagnostics under limited-data
-        conditions.
-  \item \textit{Status:} analysis prototype; claims kept deliberately narrow.
-\end{cvbullets}
-
 % =============================================================
 %  SELECTED PUBLICATIONS
 % =============================================================
 \cvsection{Selected Publications}
 
-{\small
-\begin{enumerate}[leftmargin=1.4em, label=\arabic*.,
-                  topsep=0pt, itemsep=5pt, parsep=0pt]
+\begin{enumerate}[leftmargin=1.6em, label=\arabic*.,
+                  topsep=0pt, itemsep=3pt, parsep=0pt]
 
   \item Wallace, J., Riccardi, L., Mancin, F., \& De~Vivo, M. (2025).
         A Scoring Function for Monolayer-Protected Gold Nanoparticles Capable
@@ -267,7 +214,7 @@ anticoagulants with antithrombin.}
         \href{https://doi.org/10.1021/acs.jctc.5c01278}{DOI:~10.1021/acs.jctc.5c01278}
 
   \item Franco-Ulloa, S., Cesari, A., Zanoni, G., Riccardi, L., Wallace, J.,
-        Mascitti, B.~B., Rastrelli, F., Mancin, F., \& De~Vivo, M. (2025).
+        et al. (2025).
         Rational design of gold nanoparticle-based chemosensors for detection
         of the tumor marker 3-methoxytyramine.
         \textit{Chemical Science}, \textbf{16}, 6282--6289.
@@ -280,15 +227,5 @@ anticoagulants with antithrombin.}
         PhD thesis, University of Liverpool.
 
 \end{enumerate}
-}
-
-% =============================================================
-%  ADDITIONAL EXPERIMENTAL BACKGROUND
-% =============================================================
-\cvsection{Additional Experimental Background}
-
-{\small Gold nanoparticle synthesis and characterisation (UV/Vis, FTIR,
-fluorescence); structural biochemistry methods including circular dichroism,
-HPLC, and crystallography exposure.}
 
 \end{document}
