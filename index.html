@@ -49,14 +49,14 @@
     .topnav a{color:#374151}
     .topnav a.primary-link{color:var(--accent);font-weight:650}
 
-    .hero{padding:54px 0 32px}
+    .hero{padding:64px 0 42px}
     .identity-line{color:var(--quiet);font-size:.91rem;margin-bottom:14px}
     .hero-tagline{font-size:clamp(1.01rem,1.7vw,1.13rem);color:#374151;max-width:720px;margin:14px 0 18px}
 
     .section-head{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:start}
     .section-body{min-width:0}
-    .record-list{border-top:1px solid var(--rule);margin-top:24px}
-    .record{display:grid;grid-template-columns:minmax(180px,.85fr) 1.8fr;gap:18px;align-items:start;padding:18px 0;border-bottom:1px solid var(--rule)}
+    .record-list{border-top:1px solid var(--rule-soft);margin-top:26px}
+    .record{display:grid;grid-template-columns:minmax(180px,.85fr) 1.8fr;gap:18px;align-items:start;padding:20px 0;border-bottom:1px solid var(--rule-soft)}
     .record p{color:var(--muted)}
     .record p + p{margin-top:8px}
     .pub-list{margin:22px 0 0;padding:0;list-style:none;border-top:1px solid var(--rule)}
@@ -68,6 +68,9 @@
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
     .plain-list{margin:0;padding:0;list-style:none;color:var(--muted)}
     .plain-list li + li{margin-top:8px}
+    .link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px;margin-top:8px}
+    .link-card{display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--rule);border-radius:6px;color:var(--text);background:transparent}
+    .link-card:hover{background:#f7f7f5;text-decoration:none}
     .anchor-alias{display:block;position:relative;top:calc(-1 * (var(--topbar-h) + 24px));visibility:hidden}
 
     @media (max-width:820px){
@@ -77,6 +80,7 @@
       .section-head{grid-template-columns:1fr;gap:12px}
       .contact-grid{grid-template-columns:1fr}
       .record{grid-template-columns:1fr;gap:8px}
+      .link-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -98,7 +102,7 @@
     <section class="hero" aria-label="Introduction">
       <p class="identity-line">Joe Wallace</p>
       <h1>Computational Scientist</h1>
-      <p class="hero-tagline">I work on molecular and nanoscale systems using simulation, scientific Python, and data analysis. Most of my work sits between modelling and experiment, especially where the data are messy, limited, or physically hard to interpret.</p>
+      <p class="hero-tagline">I work on molecular and nanoscale systems using simulation, scientific Python, and data analysis. Most of my work sits between modelling and experiment, especially when the data are limited, noisy, or awkward to interpret.</p>
       <div class="actions">
         <a class="btn" href="#work">View Work</a>
         <a class="btn secondary" href="/cv/Joseph_Wallace_CV.pdf" download>Download CV</a>
@@ -118,14 +122,14 @@
               <h3>PET nanoplastics and aggregation</h3>
               <div>
                 <p>I work on modelling PET nanoplastics, including contaminant binding, colloidal behaviour, zeta potential, and aggregation.</p>
-                <p>This has involved molecular simulation, Python-based analysis, and comparing atomistic results with simpler colloidal models such as DLVO when those approximations are actually useful.</p>
+                <p>This has involved molecular simulation, Python-based analysis, and comparison with simpler colloidal models such as DLVO where those approximations still hold.</p>
               </div>
             </article>
             <article class="record">
               <h3>Gold nanoparticle sensor design</h3>
               <div>
                 <p>I worked on the computational design and prioritisation of functional monolayers on gold nanoparticles for selective metabolite recognition.</p>
-                <p>The work combined molecular modelling with exploratory data analysis and regularised models for small experimental datasets, with the goal of identifying design rules rather than throwing a black box at sparse data.</p>
+                <p>The work combined molecular modelling, exploratory data analysis, and regularised models for small experimental datasets, with a focus on interpretable design rules.</p>
               </div>
             </article>
             <article class="record">
@@ -147,11 +151,11 @@
     <section id="publications">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Evidence</p>
-          <h2>Publications</h2>
+          <p class="eyebrow">Publications</p>
+          <h2>Selected Publications</h2>
         </div>
         <div class="section-body">
-          <p class="lead">Selected publications showing computational modelling, nanoparticle recognition, and experiment-linked scientific work.</p>
+          <p class="lead">A small selection of published work in computational modelling, nanoparticle recognition, and experiment-linked research.</p>
           <ul class="pub-list">
             <li>
               <strong>Wallace, J.</strong>, Riccardi, L., Mancin, F., &amp; De Vivo, M. (2025).
@@ -204,15 +208,15 @@
             <p class="quiet" style="margin-top:8px">Based in Italy. Open to scientific modelling and data-driven R&amp;D roles.</p>
           </div>
           <div>
-            <h3>Direct links</h3>
-            <ul class="plain-list" style="margin-top:8px">
-              <li><a href="https://github.com/joewa6" target="_blank" rel="noreferrer">GitHub</a></li>
-              <li><a href="https://www.linkedin.com/in/joseph--wallace/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-              <li><a href="https://scholar.google.com/citations?user=iXsu3KUAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a></li>
-              <li><a href="https://orcid.org/0009-0004-1995-7862" target="_blank" rel="noreferrer">ORCID</a></li>
-              <li><a href="mailto:joseph.wallace@iit.it">Email</a></li>
-              <li><a href="/cv/Joseph_Wallace_CV.pdf" download>CV</a></li>
-            </ul>
+            <h3>Profiles</h3>
+            <div class="link-grid">
+              <a class="link-card" href="https://github.com/joewa6" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="link-card" href="https://www.linkedin.com/in/joseph--wallace/" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="link-card" href="https://scholar.google.com/citations?user=iXsu3KUAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+              <a class="link-card" href="https://orcid.org/0009-0004-1995-7862" target="_blank" rel="noreferrer">ORCID</a>
+              <a class="link-card" href="mailto:joseph.wallace@iit.it">Email</a>
+              <a class="link-card" href="/cv/Joseph_Wallace_CV.pdf" download>CV</a>
+            </div>
           </div>
         </div>
       </div>
