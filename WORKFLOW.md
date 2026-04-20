@@ -19,9 +19,9 @@ Target public structure:
   WORKFLOW.md
   README.md
   .nojekyll
+  cv/
+    Joseph_Wallace_CV.pdf
   assets/
-    CV/
-      cv_joseph_wallace.pdf
     img/
       joe-avatar.png
   projects/
@@ -49,7 +49,7 @@ Keep these files or folders in this repository:
 - `WORKFLOW.md`
 - `.nojekyll`
 - `.gitignore`
-- `assets/CV/cv_joseph_wallace.pdf`
+- `cv/Joseph_Wallace_CV.pdf`
 - `assets/img/joe-avatar.png`
 - polished selected project pages under `projects/`
 
@@ -59,10 +59,11 @@ Current selected public project candidates:
 - `projects/p2-screening-dashboard.html`
 - `projects/p3-few-shot.html`
 
-## Move To Private Later
+## Moved To Private Workspace
 
-When the private draft repository exists, copy these public-repo items into it
-deliberately. Do not split git history unless there is a specific reason.
+These items were copied into the private repository `joewa6-site-dev` and then
+removed from the public repository. Do not split git history unless there is a
+specific reason.
 
 Draft and blog content:
 
@@ -89,10 +90,11 @@ CV source files can move private if the public site only needs the PDF:
 - `assets/CV/Makefile`
 - `assets/CV/build_cv.sh`
 - `assets/CV/README.md`
+- private CV variants from `assets/CV/private/`
 
 ## Private Draft Repository Structure
 
-Recommended private repository: `joewa6-site-dev`.
+Private repository: `joewa6-site-dev`.
 
 ```text
 /
@@ -106,8 +108,15 @@ Recommended private repository: `joewa6-site-dev`.
   experiments/
     layouts/
     old-homepages/
+    site-tools/
   assets/
+    blog-images/
+    time-series-toolkit-images/
   cv-source/
+    private/
+  analysis/
+  notebooks/
+  data/
   README.md
 ```
 
@@ -138,5 +147,6 @@ This repository is for writing and iteration. It is allowed to be messy.
 
 ## Current Safety Point
 
-Before this cleanup, the current public site state and CV updates were preserved
-in commit `baf5067` and local branch `pre-split-backup`.
+Before the split, the public site state and CV updates were preserved in commit
+`baf5067` and local branch `pre-split-backup`. The private draft workspace was
+created and pushed to the private GitHub repository `joewa6-site-dev`.
