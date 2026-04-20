@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Joe Wallace - Scientific Modelling and Computational Chemistry</title>
-  <meta name="description" content="Minimal professional site for Joseph Wallace: scientific modelling, computational chemistry, selected projects, CV, and contact links." />
+  <title>Joe Wallace - Computational Scientist</title>
+  <meta name="description" content="Minimal professional site for Joseph Wallace: computational scientist working across molecular and interfacial modelling, scientific Python, and experiment-linked data analysis." />
 
   <style>
     :root{
@@ -55,32 +55,20 @@
 
     .section-head{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:start}
     .section-body{min-width:0}
-    .selected-project{padding-bottom:4px}
-    .project-summary{border-left:3px solid var(--accent);padding-left:16px}
-    .project-summary h2{margin-bottom:14px}
-    .project-summary p + p{margin-top:10px}
-    .scope-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px;margin:14px 0 0;padding:10px 0 0;border-top:1px solid var(--rule-soft);list-style:none;color:var(--muted)}
-    .scope-list li{position:relative;padding-left:14px}
-    .scope-list li:before{content:"";position:absolute;left:0;top:.78em;width:4px;height:4px;background:var(--accent)}
-
     .lane-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
     .lane{border-top:2px solid var(--rule);padding-top:10px}
     .lane p{color:var(--muted);margin-top:8px}
     .meta{color:var(--quiet);font-size:.88rem;margin-top:12px}
 
-    .study-list{border-top:1px solid var(--rule)}
-    .study{display:grid;grid-template-columns:minmax(160px,.85fr) 1.6fr auto;gap:16px;align-items:start;padding:16px 0;border-bottom:1px solid var(--rule)}
-    .study h3{font-size:.98rem;font-weight:600;line-height:1.13;}
-    .study p{color:var(--muted)}
-    .study p + p{margin-top:6px}
-    .study-link{font-size:.91rem;font-weight:600;white-space:nowrap}
+    .work-list{border-top:1px solid var(--rule);margin-top:24px}
+    .work-item{display:grid;grid-template-columns:minmax(180px,.9fr) 1.8fr;gap:18px;align-items:start;padding:18px 0;border-bottom:1px solid var(--rule)}
+    .work-item p{color:var(--muted)}
 
     .text-block{max-width:720px}
     .text-block p + p{margin-top:10px}
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
     .plain-list{margin:0;padding:0;list-style:none;color:var(--muted)}
     .plain-list li + li{margin-top:8px}
-    .placeholder{color:var(--quiet)}
     .anchor-alias{display:block;position:relative;top:calc(-1 * (var(--topbar-h) + 24px));visibility:hidden}
 
     @media (max-width:820px){
@@ -88,125 +76,84 @@
       .topnav{gap:10px}
       .hero{padding:38px 0 24px}
       .section-head{grid-template-columns:1fr;gap:12px}
-      .lane-grid,.scope-list,.contact-grid{grid-template-columns:1fr}
-      .study{grid-template-columns:1fr;gap:8px}
-      .study-link{white-space:normal}
+      .lane-grid,.contact-grid{grid-template-columns:1fr}
+      .work-item{grid-template-columns:1fr;gap:8px}
     }
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="inner">
-      <div class="brand">Joe Wallace<span>Scientific modelling and computational chemistry</span></div>
+      <div class="brand">Joe Wallace<span>Molecular and interfacial modelling | Scientific Python | Experiment-linked analysis</span></div>
       <nav class="topnav" aria-label="Primary">
-        <a href="#selected-project">Selected Work</a>
+        <a href="#home">Home</a>
+        <a href="#work">Work</a>
         <a href="#cv">CV</a>
-        <a href="#contact" class="primary-link">Contact</a>
+        <a href="#links" class="primary-link">Links</a>
       </nav>
     </div>
   </header>
 
   <main id="home" class="page">
     <section class="hero" aria-label="Introduction">
-      <p class="identity-line">Computational chemist. Scientific modelling. Python workflows.</p>
-      <h1>Scientific modelling for sparse, complex, experiment-linked data.</h1>
-      <p class="hero-tagline">Computational chemistry, molecular modelling, and reproducible Python analysis for problems where assumptions matter.</p>
+      <p class="identity-line">Computational Scientist | Molecular &amp; Interfacial Modelling | Scientific Python | Experiment-Linked Data Analysis</p>
+      <h1>Computational modelling and scientific Python for molecular and interfacial systems.</h1>
+      <p class="hero-tagline">I work on physically grounded modelling, reproducible Python workflows, and interpretable analysis for complex scientific data, including sparse or noisy experiment-linked datasets.</p>
       <div class="actions">
-        <a class="btn" href="#selected-work">View Work</a>
+        <a class="btn" href="#work">View Work</a>
         <a class="btn secondary" href="/cv/Joseph_Wallace_CV.pdf" download>Download CV</a>
-      </div>
-    </section>
-
-    <section id="selected-project" class="selected-project">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Selected project</p>
-        </div>
-        <div class="section-body project-summary">
-          <h2>Docking + rescoring benchmark for ligand ranking</h2>
-          <p class="lead">Built a reproducible workflow to test whether rescoring improves prioritisation over baseline docking on a curated protein-ligand benchmark.</p>
-          <p class="quiet">Current project record focuses on ranking analysis, benchmark design, and explicit failure-mode analysis rather than inflated claims.</p>
-          <ul class="scope-list" aria-label="Workflow scope">
-            <li>Structure preparation and docking setup</li>
-            <li>Ligand descriptors and interaction features</li>
-            <li>Ranking, enrichment, and baseline comparison</li>
-            <li>Transparent limitations and reproducible setup</li>
-          </ul>
-          <div class="actions" style="margin-top:22px">
-            <a class="btn secondary" href="projects/p1-binding-pipeline.html">Case Study</a>
-          </div>
-        </div>
       </div>
     </section>
 
     <section id="what-i-do">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Capabilities</p>
+          <p class="eyebrow">Areas</p>
           <h2>What I Do</h2>
         </div>
         <div class="section-body">
-          <p class="lead">Computational workflows for molecular and scientific data, built to be inspected, rerun, and challenged.</p>
+          <p class="lead">Computational work at the boundary between chemical systems, physical interpretation, and practical data analysis.</p>
           <div class="lane-grid" style="margin-top:26px">
             <article class="lane">
-              <h3>Virtual screening workflows</h3>
-              <p>Docking, rescoring, enrichment analysis, and benchmark design for ligand ranking.</p>
-              <p class="meta">Docking / rescoring / enrichment</p>
+              <h3>Molecular &amp; interfacial modelling</h3>
+              <p>Simulation and analysis of molecular, nanoscale, and interfacial systems with emphasis on physical interpretation.</p>
+              <p class="meta">Molecular systems / interfaces / interpretation</p>
             </article>
             <article class="lane">
-              <h3>Molecular modelling</h3>
-              <p>Structure-based analysis, ligand-target interactions, and reproducible model assumptions.</p>
-              <p class="meta">CADD / interactions / RDKit</p>
+              <h3>Sparse-data scientific analysis</h3>
+              <p>Statistical and descriptor-based analysis for low-count, noisy, or multivariate scientific datasets.</p>
+              <p class="meta">Descriptors / regularisation / uncertainty</p>
             </article>
             <article class="lane">
-              <h3>Scientific computing</h3>
-              <p>Python automation, analysis notebooks, GitHub-first workflows, and decision-oriented tooling.</p>
-              <p class="meta">Python / analysis / reproducibility</p>
+              <h3>Reproducible Python workflows</h3>
+              <p>Scientific Python pipelines for data processing, visualisation, automation, and experiment-linked decision support.</p>
+              <p class="meta">Python / visualisation / automation</p>
             </article>
           </div>
         </div>
       </div>
     </section>
 
-    <span id="projects" class="anchor-alias" aria-hidden="true"></span>
-    <span id="selected-work" class="anchor-alias" aria-hidden="true"></span>
-    <section id="selected-work-list">
+    <section id="work">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Project records</p>
-          <h2>Selected Work</h2>
+          <p class="eyebrow">Work</p>
+          <h2>Selected Experience</h2>
         </div>
         <div class="section-body">
-          <p class="lead">Selected public project records showing workflow design, evaluation logic, and current limitations.</p>
-          <div class="study-list" style="margin-top:24px">
-            <article class="study">
-              <h3>Ligand ranking benchmark pipeline</h3>
-              <div>
-                <p>Question: can rescoring and molecular features improve prioritisation beyond a docking-only baseline?</p>
-                <p>Status: reproducible benchmark workflow in progress, with emphasis on ranking analysis and failure modes.</p>
-                <p class="meta">Docking / rescoring / benchmarking / reproducibility</p>
-              </div>
-              <a class="study-link" href="projects/p1-binding-pipeline.html">Open project</a>
+          <p class="lead">A compact view of the kinds of scientific computing and modelling work I do. Longer notes stay private unless they become genuinely useful public material.</p>
+          <div class="work-list">
+            <article class="work-item">
+              <h3>Reusable scientific Python analysis pipelines</h3>
+              <p>Built reusable Python workflows for automated processing, comparison, and visualisation of simulation and experiment-linked datasets across multiple chemical conditions.</p>
             </article>
-
-            <article class="study">
-              <h3>Screening analysis dashboard</h3>
-              <div>
-                <p>Question: how should screening results be filtered, ranked, inspected, and exported for practical hit triage?</p>
-                <p>Status: dashboard workflow prototype for cheminformatics review and reproducible analysis.</p>
-                <p class="meta">Cheminformatics / dashboard / ranking / analysis</p>
-              </div>
-              <a class="study-link" href="projects/p2-screening-dashboard.html">Open project</a>
+            <article class="work-item">
+              <h3>Colloidal behaviour &amp; reduced-model comparison</h3>
+              <p>Analysed aggregation and electrostatic behaviour at nanoparticle interfaces using physically interpretable observables, and compared molecular-level trends with simpler colloidal and chemical models.</p>
             </article>
-
-            <article class="study">
-              <h3>Low-data molecular property modelling</h3>
-              <div>
-                <p>Question: when data are limited, which learned molecular representations remain useful enough to justify their complexity?</p>
-                <p>Status: analysis prototype comparing baseline discipline, transfer learning ideas, and latent diagnostics.</p>
-                <p class="meta">Molecular ML / few-shot / diagnostics / baselines</p>
-              </div>
-              <a class="study-link" href="projects/p3-few-shot.html">Open project</a>
+            <article class="work-item">
+              <h3>Sparse-data scientific modelling</h3>
+              <p>Analysed low-count experimental datasets using chemically informed descriptors and regularised statistical models to extract interpretable trends, prioritise candidates, and guide follow-up experiments.</p>
             </article>
           </div>
         </div>
@@ -220,7 +167,7 @@
           <h2>CV</h2>
         </div>
         <div class="section-body">
-          <p class="lead">Computational chemist CV — scientific modelling, molecular analysis, and reproducible Python workflows.</p>
+          <p class="lead">CV covering computational chemistry, molecular and interfacial modelling, scientific Python, and data-driven R&amp;D work.</p>
           <div class="actions" style="margin-top:18px">
             <a class="btn secondary" href="/cv/Joseph_Wallace_CV.pdf" download>Download CV (PDF)</a>
             <a class="btn secondary" href="https://github.com/joewa6" target="_blank" rel="noreferrer">GitHub</a>
@@ -230,23 +177,24 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="links">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Contact</p>
-          <h2>Contact</h2>
+          <p class="eyebrow">Links</p>
+          <h2>Links</h2>
         </div>
         <div class="section-body contact-grid">
           <div>
-            <h3>Recruiting and collaboration</h3>
-            <p class="quiet" style="margin-top:8px">Open to scientific modelling and computational chemistry roles involving sparse data, molecular modelling, benchmarking, and scientific software.</p>
+            <h3>Availability</h3>
+            <p class="quiet" style="margin-top:8px">Based in Italy. Open to scientific modelling and data-driven R&amp;D roles.</p>
           </div>
           <div>
             <h3>Direct links</h3>
             <ul class="plain-list" style="margin-top:8px">
               <li><a href="https://github.com/joewa6" target="_blank" rel="noreferrer">GitHub</a></li>
               <li><a href="https://www.linkedin.com/in/joseph--wallace/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-              <li><span class="placeholder">Email address pending</span></li>
+              <li><a href="mailto:joseph.wallace@iit.it">Email</a></li>
+              <li><a href="/cv/Joseph_Wallace_CV.pdf" download>CV</a></li>
             </ul>
           </div>
         </div>
