@@ -49,8 +49,7 @@
     .topnav a{color:#374151}
     .topnav a.primary-link{color:var(--accent);font-weight:650}
 
-    .hero{padding:64px 0 42px}
-    .identity-line{color:var(--quiet);font-size:.91rem;margin-bottom:14px}
+    .hero{padding:48px 0 38px}
     .hero-tagline{font-size:clamp(1.01rem,1.7vw,1.13rem);color:#374151;max-width:720px;margin:14px 0 18px}
 
     .section-head{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:start}
@@ -66,10 +65,11 @@
     .text-block{max-width:720px}
     .text-block p + p{margin-top:10px}
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .profile-links{max-width:520px}
     .plain-list{margin:0;padding:0;list-style:none;color:var(--muted)}
     .plain-list li + li{margin-top:8px}
-    .link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px;margin-top:8px}
-    .link-card{display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid var(--rule);border-radius:6px;color:var(--text);background:transparent}
+    .link-grid{display:grid;grid-template-columns:repeat(2,minmax(150px,1fr));gap:10px 14px;margin-top:8px;width:100%}
+    .link-card{display:flex;align-items:center;justify-content:space-between;min-height:44px;padding:10px 12px;border:1px solid var(--rule);border-radius:6px;color:var(--text);background:transparent;font-weight:560}
     .link-card:hover{background:#f7f7f5;text-decoration:none}
     .anchor-alias{display:block;position:relative;top:calc(-1 * (var(--topbar-h) + 24px));visibility:hidden}
 
@@ -100,7 +100,6 @@
 
   <main id="home" class="page">
     <section class="hero" aria-label="Introduction">
-      <p class="identity-line">Joe Wallace</p>
       <h1>Computational Scientist</h1>
       <p class="hero-tagline">I work on molecular and nanoscale systems using simulation, scientific Python, and data analysis. Most of my work sits between modelling and experiment, especially when the data are limited, noisy, or awkward to interpret.</p>
       <div class="actions">
@@ -207,7 +206,7 @@
             <h3>Availability</h3>
             <p class="quiet" style="margin-top:8px">Based in Italy. Open to scientific modelling and data-driven R&amp;D roles.</p>
           </div>
-          <div>
+          <div class="profile-links">
             <h3>Profiles</h3>
             <div class="link-grid">
               <a class="link-card" href="https://github.com/joewa6" target="_blank" rel="noreferrer">GitHub</a>
