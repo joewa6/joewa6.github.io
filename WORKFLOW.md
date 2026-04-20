@@ -6,8 +6,8 @@ Treat everything committed here as public.
 ## Goal
 
 Keep `main` as a minimal professional site for first impressions, CV sharing,
-selected work, and contact links. Use a separate private repository for drafts,
-blog posts, experiments, and heavier technical notes.
+and contact links. Use a separate private repository for drafts, blog posts,
+experiments, project writeups, and heavier technical notes.
 
 ## Public Repository Structure
 
@@ -24,17 +24,11 @@ Target public structure:
   assets/
     img/
       joe-avatar.png
-  projects/
-    p1-binding-pipeline.html
-    p2-screening-dashboard.html
-    p3-few-shot.html
 ```
 
 Optional public additions later:
 
 ```text
-projects/
-  index.html
 assets/
   css/
   js/
@@ -51,13 +45,6 @@ Keep these files or folders in this repository:
 - `.gitignore`
 - `cv/Joseph_Wallace_CV.pdf`
 - `assets/img/joe-avatar.png`
-- polished selected project pages under `projects/`
-
-Current selected public project candidates:
-
-- `projects/p1-binding-pipeline.html`
-- `projects/p2-screening-dashboard.html`
-- `projects/p3-few-shot.html`
 
 ## Moved To Private Workspace
 
@@ -82,6 +69,9 @@ Analysis, notebooks, data, and site-generation tooling:
 Off-message or heavier project material to review before keeping public:
 
 - `projects/p0-time-series-toolkit.html`
+- `projects/p1-binding-pipeline.html`
+- `projects/p2-screening-dashboard.html`
+- `projects/p3-few-shot.html`
 - `assets/img/projects/time-series-toolkit/`
 
 CV source files can move private if the public site only needs the PDF:
@@ -144,6 +134,8 @@ This repository is for writing and iteration. It is allowed to be messy.
    first-time visitor.
 5. Keep blog posts out of the main navigation unless there is a deliberate
    reason to make them public-facing.
+6. Keep project links off the homepage unless the target pages are clearly
+   stronger than the CV and external profiles.
 
 ## Current Safety Point
 

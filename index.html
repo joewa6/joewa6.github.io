@@ -55,15 +55,6 @@
 
     .section-head{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:start}
     .section-body{min-width:0}
-    .lane-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    .lane{border-top:2px solid var(--rule);padding-top:10px}
-    .lane p{color:var(--muted);margin-top:8px}
-    .meta{color:var(--quiet);font-size:.88rem;margin-top:12px}
-
-    .work-list{border-top:1px solid var(--rule);margin-top:24px}
-    .work-item{display:grid;grid-template-columns:minmax(180px,.9fr) 1.8fr;gap:18px;align-items:start;padding:18px 0;border-bottom:1px solid var(--rule)}
-    .work-item p{color:var(--muted)}
-
     .text-block{max-width:720px}
     .text-block p + p{margin-top:10px}
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
@@ -76,8 +67,7 @@
       .topnav{gap:10px}
       .hero{padding:38px 0 24px}
       .section-head{grid-template-columns:1fr;gap:12px}
-      .lane-grid,.contact-grid{grid-template-columns:1fr}
-      .work-item{grid-template-columns:1fr;gap:8px}
+      .contact-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -87,7 +77,6 @@
       <div class="brand">Joe Wallace<span>Computational Scientist</span></div>
       <nav class="topnav" aria-label="Primary">
         <a href="#home">Home</a>
-        <a href="#work">Work</a>
         <a href="#cv">CV</a>
         <a href="#links" class="primary-link">Links</a>
       </nav>
@@ -100,63 +89,8 @@
       <h1>Computational Scientist</h1>
       <p class="hero-tagline">Computational scientist with a background in chemistry, molecular modelling, and scientific Python. My work focuses on interpretable modelling, reproducible workflows, and data analysis for molecular and materials systems.</p>
       <div class="actions">
-        <a class="btn" href="#work">View Work</a>
-        <a class="btn secondary" href="/cv/Joseph_Wallace_CV.pdf" download>Download CV</a>
-      </div>
-    </section>
-
-    <section id="what-i-do">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Areas</p>
-          <h2>What I Do</h2>
-        </div>
-        <div class="section-body">
-          <p class="lead">Computational work at the boundary between chemical systems, physical interpretation, and practical data analysis.</p>
-          <div class="lane-grid" style="margin-top:26px">
-            <article class="lane">
-              <h3>Molecular &amp; interfacial modelling</h3>
-              <p>Simulation and analysis of molecular, nanoscale, and interfacial systems with emphasis on physical interpretation.</p>
-              <p class="meta">Molecular systems / interfaces / interpretation</p>
-            </article>
-            <article class="lane">
-              <h3>Sparse-data scientific analysis</h3>
-              <p>Statistical and descriptor-based analysis for low-count, noisy, or multivariate scientific datasets.</p>
-              <p class="meta">Descriptors / regularisation / uncertainty</p>
-            </article>
-            <article class="lane">
-              <h3>Reproducible Python workflows</h3>
-              <p>Scientific Python pipelines for data processing, visualisation, automation, and experiment-linked decision support.</p>
-              <p class="meta">Python / visualisation / automation</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="work">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Work</p>
-          <h2>Selected Experience</h2>
-        </div>
-        <div class="section-body">
-          <p class="lead">A compact view of the kinds of scientific computing and modelling work I do. Longer notes stay private unless they become genuinely useful public material.</p>
-          <div class="work-list">
-            <article class="work-item">
-              <h3>Reusable scientific Python analysis pipelines</h3>
-              <p>Built reusable Python workflows for automated processing, comparison, and visualisation of simulation and experiment-linked datasets across multiple chemical conditions.</p>
-            </article>
-            <article class="work-item">
-              <h3>Colloidal behaviour &amp; reduced-model comparison</h3>
-              <p>Analysed aggregation and electrostatic behaviour at nanoparticle interfaces using physically interpretable observables, and compared molecular-level trends with simpler colloidal and chemical models.</p>
-            </article>
-            <article class="work-item">
-              <h3>Sparse-data scientific modelling</h3>
-              <p>Analysed low-count experimental datasets using chemically informed descriptors and regularised statistical models to extract interpretable trends, prioritise candidates, and guide follow-up experiments.</p>
-            </article>
-          </div>
-        </div>
+        <a class="btn" href="/cv/Joseph_Wallace_CV.pdf" download>Download CV</a>
+        <a class="btn secondary" href="#links">Links</a>
       </div>
     </section>
 

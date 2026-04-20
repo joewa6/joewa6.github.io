@@ -3,7 +3,6 @@
 Public professional site for Joe Wallace:
 
 - short intro
-- selected work
 - CV
 - links/contact
 
