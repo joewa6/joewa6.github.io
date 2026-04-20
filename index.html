@@ -55,6 +55,14 @@
 
     .section-head{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:start}
     .section-body{min-width:0}
+    .record-list{border-top:1px solid var(--rule);margin-top:24px}
+    .record{display:grid;grid-template-columns:minmax(180px,.85fr) 1.8fr;gap:18px;align-items:start;padding:18px 0;border-bottom:1px solid var(--rule)}
+    .record p{color:var(--muted)}
+    .record p + p{margin-top:8px}
+    .pub-list{margin:22px 0 0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+    .pub-list li{padding:15px 0;border-bottom:1px solid var(--rule);color:var(--muted)}
+    .pub-list strong{color:var(--text);font-weight:620}
+    .pub-links{margin-top:6px;font-size:.92rem}
     .text-block{max-width:720px}
     .text-block p + p{margin-top:10px}
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
@@ -68,6 +76,7 @@
       .hero{padding:38px 0 24px}
       .section-head{grid-template-columns:1fr;gap:12px}
       .contact-grid{grid-template-columns:1fr}
+      .record{grid-template-columns:1fr;gap:8px}
     }
   </style>
 </head>
@@ -77,6 +86,8 @@
       <div class="brand">Joe Wallace<span>Computational Scientist</span></div>
       <nav class="topnav" aria-label="Primary">
         <a href="#home">Home</a>
+        <a href="#work">Work</a>
+        <a href="#publications">Publications</a>
         <a href="#cv">CV</a>
         <a href="#links" class="primary-link">Links</a>
       </nav>
@@ -87,10 +98,80 @@
     <section class="hero" aria-label="Introduction">
       <p class="identity-line">Joe Wallace</p>
       <h1>Computational Scientist</h1>
-      <p class="hero-tagline">Computational scientist with a background in chemistry, molecular modelling, and scientific Python. My work focuses on interpretable modelling, reproducible workflows, and data analysis for molecular and materials systems.</p>
+      <p class="hero-tagline">Computational scientist with a background in chemistry, molecular modelling, and scientific Python. My work spans molecular and nanoscale systems, with an emphasis on interpretable modelling, reproducible workflows, and data analysis linked to experimental questions.</p>
       <div class="actions">
-        <a class="btn" href="/cv/Joseph_Wallace_CV.pdf" download>Download CV</a>
-        <a class="btn secondary" href="#links">Links</a>
+        <a class="btn" href="#work">View Work</a>
+        <a class="btn secondary" href="/cv/Joseph_Wallace_CV.pdf" download>Download CV</a>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Work</p>
+          <h2>Research &amp; Work</h2>
+        </div>
+        <div class="section-body">
+          <p class="lead">Real research areas, kept as short summaries rather than underbuilt project pages.</p>
+          <div class="record-list">
+            <article class="record">
+              <h3>PhD - peptides on gold nanoparticles</h3>
+              <div>
+                <p>Studied constrained peptides on gold nanoparticles in dense self-assembled monolayers, combining experimental and computational work to understand structure, dynamics, and peptide-nanoparticle interactions.</p>
+                <p>Experimental work included synthesis, FTIR, CD, X-ray methods, HPLC, and characterisation. Computational work included molecular dynamics, enhanced sampling, and modelling nanoscale dynamics.</p>
+              </div>
+            </article>
+            <article class="record">
+              <h3>Postdoc - gold nanoparticle sensor design</h3>
+              <div>
+                <p>Worked on computational design and prioritisation of monolayers for selective metabolite recognition in a cancer-related sensing context.</p>
+                <p>Linked molecular modelling, exploratory data analysis, Python workflows, and regularised models for small experimental datasets.</p>
+              </div>
+            </article>
+            <article class="record">
+              <h3>Postdoc - PET nanoplastics modelling</h3>
+              <div>
+                <p>Modelled contaminant binding, colloidal behaviour, aggregation, and zeta-potential-related behaviour in PET nanoplastic systems.</p>
+                <p>Connected molecular simulation with reduced models such as DLVO where useful, while identifying where simplified models break down. Built Python, Streamlit, and simulation-analysis workflows.</p>
+              </div>
+            </article>
+            <article class="record">
+              <h3>Exploratory technical work</h3>
+              <p>Side work includes time-series prediction, ARC-style reasoning tasks, and agent/population dynamics. This stays secondary to the research profile, but reflects broader technical curiosity.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Evidence</p>
+          <h2>Publications</h2>
+        </div>
+        <div class="section-body">
+          <p class="lead">Selected publications showing computational modelling, nanoparticle recognition, and experiment-linked scientific work.</p>
+          <ul class="pub-list">
+            <li>
+              <strong>Wallace, J.</strong>, Riccardi, L., Mancin, F., &amp; De Vivo, M. (2025).
+              A scoring function for monolayer-protected gold nanoparticles capable of recognizing small organic molecules in solution.
+              <em>Journal of Chemical Theory and Computation</em>, 21(21), 11070-11078.
+              <div class="pub-links"><a href="https://doi.org/10.1021/acs.jctc.5c01278" target="_blank" rel="noreferrer">DOI: 10.1021/acs.jctc.5c01278</a></div>
+            </li>
+            <li>
+              Franco-Ulloa, S., Cesari, A., Zanoni, G., Riccardi, L., <strong>Wallace, J.</strong>, et al. (2025).
+              Rational design of gold nanoparticle-based chemosensors for detection of the tumor marker 3-methoxytyramine.
+              <em>Chemical Science</em>, 16, 6282-6289.
+              <div class="pub-links"><a href="https://doi.org/10.1039/D4SC08758E" target="_blank" rel="noreferrer">DOI: 10.1039/D4SC08758E</a></div>
+            </li>
+            <li>
+              <strong>Wallace, J.</strong> (2022).
+              <em>How Does Constraining Folded Peptides within Dense Self-Assembled Monolayers on Gold Nanoparticles Affect Their Structure?</em>
+              PhD thesis, University of Liverpool.
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -127,6 +208,8 @@
             <ul class="plain-list" style="margin-top:8px">
               <li><a href="https://github.com/joewa6" target="_blank" rel="noreferrer">GitHub</a></li>
               <li><a href="https://www.linkedin.com/in/joseph--wallace/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+              <li><a href="https://scholar.google.com/scholar?q=%22Joseph+Wallace%22+%22gold+nanoparticles%22" target="_blank" rel="noreferrer">Google Scholar</a></li>
+              <li><a href="https://orcid.org/orcid-search/search?searchQuery=%22Joseph%20Wallace%22%20%22Istituto%20Italiano%20di%20Tecnologia%22" target="_blank" rel="noreferrer">ORCID search</a></li>
               <li><a href="mailto:joseph.wallace@iit.it">Email</a></li>
               <li><a href="/cv/Joseph_Wallace_CV.pdf" download>CV</a></li>
             </ul>
@@ -139,6 +222,7 @@
           <a href="#cv">CV</a>
           <a href="https://github.com/joewa6" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/joseph--wallace/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://scholar.google.com/scholar?q=%22Joseph+Wallace%22+%22gold+nanoparticles%22" target="_blank" rel="noreferrer">Scholar</a>
           <a href="mailto:joseph.wallace@iit.it">joseph.wallace@iit.it</a>
         </div>
         <div class="quiet" style="margin-top:12px">&copy; <span id="y"></span> Joe Wallace</div>

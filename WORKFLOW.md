@@ -5,9 +5,10 @@ Treat everything committed here as public.
 
 ## Goal
 
-Keep `main` as a minimal professional site for first impressions, CV sharing,
-and contact links. Use a separate private repository for drafts, blog posts,
-experiments, project writeups, and heavier technical notes.
+Keep `main` as a minimal professional research profile for first impressions,
+work summaries, selected publications, CV sharing, and contact links. Use a
+separate private repository for drafts, blog posts, experiments, project
+writeups, and heavier technical notes.
 
 ## Public Repository Structure
 
@@ -45,6 +46,14 @@ Keep these files or folders in this repository:
 - `.gitignore`
 - `cv/Joseph_Wallace_CV.pdf`
 - `assets/img/joe-avatar.png`
+
+Public homepage content should stay concise:
+
+- hero identity
+- real work summaries
+- selected publications
+- CV
+- links
 
 ## Moved To Private Workspace
 
