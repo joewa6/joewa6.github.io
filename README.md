@@ -1,13 +1,11 @@
 # joewa6.github.io
 
-Public professional site for Joe Wallace:
+Public professional site for Joe Wallace.
 
-- short intro
-- research and work summaries
-- selected publications
-- CV
-- links/contact
+## Contents
 
-Drafts, blog material, heavier analysis, experiments, and CV source variants
-live in the private `joewa6-site-dev` repository. See `WORKFLOW.md` for the
-two-tier workflow.
+- `index.html` - single-page profile site
+- `cv/Joseph_Wallace_CV.pdf` - public one-page CV
+- `assets/img/` - public image assets
+
+The site is served with GitHub Pages from `main`.

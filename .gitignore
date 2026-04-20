@@ -17,5 +17,23 @@ ENV/
 # macOS
 .DS_Store
 
-# Build artifacts (keep generated HTML for GitHub Pages)
-# We commit the HTML files since GitHub Pages serves them
+# Private notes, drafts, and planning files
+WORKFLOW.md
+PLAN.md
+PLANNING.md
+NOTES.md
+TODO.md
+drafts/
+private/
+*.local.*
+*.private.*
+
+# CV source and local build artifacts
+cv/*.tex
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/*.fls
+cv/*.fdb_latexmk
+
+# Keep generated HTML and public PDFs committed for GitHub Pages.
