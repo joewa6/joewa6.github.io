@@ -58,6 +58,10 @@
     .record{display:grid;grid-template-columns:minmax(180px,.85fr) 1.8fr;gap:18px;align-items:start;padding:20px 0;border-bottom:1px solid var(--rule-soft)}
     .record p{color:var(--muted)}
     .record p + p{margin-top:8px}
+    .work-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
+    .dashboard-embed{display:none;margin-top:16px}
+    .dashboard-embed.is-visible{display:block}
+    .dashboard-embed iframe{display:block;width:100%;min-height:850px;border:0;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,.1);background:var(--surface)}
     .pub-list{margin:22px 0 0;padding:0;list-style:none;border-top:1px solid var(--rule)}
     .pub-list li{padding:15px 0;border-bottom:1px solid var(--rule);color:var(--muted)}
     .pub-list strong{color:var(--text);font-weight:620}
@@ -122,6 +126,18 @@
               <div>
                 <p>Modelling PET nanoplastics, including contaminant binding, colloidal behaviour, zeta potential, and aggregation.</p>
                 <p>This has involved molecular simulation, Python-based analysis, and comparison with simpler colloidal models such as DLVO where those approximations still hold.</p>
+                <div class="work-actions">
+                  <button class="btn" type="button" data-dashboard-toggle aria-expanded="false" aria-controls="pet-dashboard">View interactive dashboard</button>
+                  <a class="btn secondary" href="#" data-dashboard-link target="_blank" rel="noreferrer">Open full app</a>
+                </div>
+                <div class="dashboard-embed" id="pet-dashboard">
+                  <iframe
+                    title="PET binding Streamlit dashboard"
+                    data-dashboard-frame
+                    loading="lazy"
+                    allow="clipboard-write"
+                  ></iframe>
+                </div>
               </div>
             </article>
             <article class="record">
@@ -233,7 +249,26 @@
   </main>
 
   <script>
+    const petDashboardUrl = 'https://pet-np-binding.streamlit.app?embed=true';
+
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    const dashboardToggle = document.querySelector('[data-dashboard-toggle]');
+    const dashboardEmbed = document.getElementById('pet-dashboard');
+    const dashboardFrame = document.querySelector('[data-dashboard-frame]');
+    const dashboardLink = document.querySelector('[data-dashboard-link]');
+
+    dashboardLink.href = petDashboardUrl.replace('?embed=true', '');
+
+    dashboardToggle.addEventListener('click', () => {
+      const isVisible = dashboardEmbed.classList.toggle('is-visible');
+      dashboardToggle.setAttribute('aria-expanded', String(isVisible));
+      dashboardToggle.textContent = isVisible ? 'Hide interactive dashboard' : 'View interactive dashboard';
+
+      if (isVisible && !dashboardFrame.src) {
+        dashboardFrame.src = petDashboardUrl;
+      }
+    });
   </script>
 </body>
 </html>
